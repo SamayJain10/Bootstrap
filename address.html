@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Delivery Address</title>
+    <link rel="stylesheet" href="address.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="images/amazon.svg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="address.js"></script>
+
+</head>
+<body>
+
+    <div class="sidebar" tabindex="0">
+        <div class="sidebar-head">
+            <h2><a href = "signin.html" style="color: white;">Hello, Sign in</a></h2>
+        </div>
+
+                        <!-- First section of sidebar content -->
+        <div class="sidebar-content">
+            <h3>Digital Content & Devices</h3>
+            <ul>
+                <div>
+                    <li>Amazon Music</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Kindle E-Readers & Books</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Appstore for Android</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+            </ul>
+            <div class="separator"></div>
+        </div>
+
+                        <!-- Second section of sidebar content -->
+        <div class="sidebar-content">
+            <h3>Shop By Department</h3>
+            <ul>
+                <div>
+                    <li>Electronics</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Computers</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Smart Homes</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Arts & Crafts</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+            </ul>
+            <div class="separator"></div>
+        </div>
+
+                         <!-- Third section of sidebar content -->  
+        <div class="sidebar-content">
+            <h3>Programs & Features</h3>
+            <ul>
+                <div>
+                    <li>Gift Cards & Mobile Recharges</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Flight Tickets</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div>
+                    <li>Clearance Store</li><i class="fa-solid fa-angle-right"></i>
+                </div>
+            </ul>
+            <div class="separator"></div>
+        </div>
+    </div>
+    <div class="black"></div>
+    <i class="fa-solid fa-xmark" id="close-sidebar"></i>
+    <div class="triangle"><i class="fa-solid fa-triangle"></i></div>
+
+    <header>
+        <div class="header">
+            <div class="flex logo">
+            <a href="#"><img src="images/logo.png" alt=""></a>
+            <div class="map flex" tabindex="0">
+                <i class="fas fa-map-marker"></i>
+                <div>
+                    <span>Deliver to Delhi</span>
+                    <span>Update location</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex input">
+            <div>
+                <span>All</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <input type="text" placeholder="Search Amazon.in">
+            <i class="fas fa-search" tabindex="0"></i>
+        </div>
+        <div class="flex user">
+            <div class="flex country" tabindex="0">
+                <img src="images/ind.png" alt="">
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <div class="sign">
+                <span tabindex="0"><a href = "signin.html" style="color: #ffff;">Hello, Sign in</a></span>
+                <div class="flex ac" tabindex="0">
+                    <span>Accounts & Lists</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="sign" tabindex="0">
+                <span>Returns</span>
+                <span>& Orders</span>
+            </div>
+            <div class="flex cart" tabindex="0">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="ca">Cart</span>
+            </div>
+        </div>
+    </div>
+    <div class="navigation">
+        <div class="nav-1" tabindex="0">
+            <div>
+                <i class="fas fa-bars"></i>
+                <span>All</span>
+            </div>
+        </div>
+        <div class="nav-2">
+            <ul>
+                <li>Today's Deal</li>
+                <li>Amazon miniTV</li>
+                <li>Sell</li>
+                <li>Mobiles</li>
+                <li>Fashion</li>
+                <li>Electronics</li>
+                <li>New Releases</li>
+                <li>Prime</li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+    <section class="form">
+        <div class="form-container">
+        <h1 class="form-header">Enter a new delivery address</h1>
+        
+        <form>
+            <label for="country">Country/Region</label>
+            <select id="country" name="country">
+                <option value="India">India</option>
+                <!-- Add other countries as options if needed -->
+            </select>
+            
+            <label for="fullName">Full name (First and Last name)</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <div class="error-message" id="nameError"></div>
+            
+            <label for="mobileNumber">Mobile number</label>
+            <input type="text" id="mobileNumber" name="mobileNumber" required>
+            <div class="error-message" id="mobileError"></div>
+            
+            <label for="addressLine1">Flat, House no., Building, Company, Apartment</label>
+            <input type="text" id="addressLine1" name="addressLine1" required>
+            
+            <label for="addressLine2">Area, Street, Sector, Village</label>
+            <input type="text" id="addressLine2" name="addressLine2" required>
+            
+            <label for="landmark">Landmark</label>
+            <input type="text" id="landmark" name="landmark">
+            
+            <label for="townCity">Town/City</label>
+            <input type="text" id="townCity" name="townCity" required>
+            
+            <label for="state">State</label>
+            <select id="state" name="state">
+                <option value="" disabled selected>Select State</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Ladakh">Ladakh</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+            </select>
+
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" name="pincode" required>
+            <div class="error-message" id="pincodeError"></div>
+            
+            <div class="default-address">
+                <input type="checkbox" id="defaultAddress" name="defaultAddress">
+                <label for="defaultAddress">Make this my default address</label>
+            </div>
+            
+            <div class="delivery-instructions">
+                <a href="#">Add preferences, notes, access codes and more</a>
+            </div>
+            
+            <button type="submit" class="submit-button">Use this address</button>
+        </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="backtop">
+            <span tabindex="0">Back to Top</span>
+        </div>
+        <div class="support">
+            <div class="table">
+                <div>
+                    <div class="footer-head">Get to Know Us</div>
+                    <ul>
+                        <li>Careers</li>
+                        <li>Blogs</li>
+                        <li>About Amazon</li>
+                        <li>Investor Relations</li>
+                        <li>Amazon Advices</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <div class="footer-head">Make Money with Us</div>
+                    <ul>
+                        <li>Sell Products on Amazon</li>
+                        <li>Sell on Amazon Business</li>
+                        <li>Sell Apps on Amazon</li>
+                        <li>Become an Affiliate</li>
+                        <li>Advertise your Products</li>
+                        <li>Host an Amazon Hub</li>
+                    </ul>
+                </div>
+            
+           
+                <div>
+                    <div class="footer-head">Amazon Payment Products</div>
+                    <ul>
+                        <li>Amazon Business Cards</li>
+                        <li>Shop with Points</li>
+                        <li>Reload your Balance</li>
+                        <li>Amazon Currency Converter</li>
+                    </ul>
+                </div>
+            
+            
+                <div>
+                    <div class="footer-head">Let Us Help You</div>
+                    <ul>
+                        <li>Amazon and COVID-19</li>
+                        <li>Your Account</li>
+                        <li>Your Orders</li>
+                        <li>Shipping Rates and Policies</li>
+                        <li>Returns and Replacements</li>
+                        <li>Manage your Content & Devices</li>
+                        <li>Amazon Assistant</li>
+                        <li>Help</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="copy">
+            <span>&copy; 1996-2024, Amazon.com, Inc. or its affiliates</span><br>
+            <span><a href="https://github.com/SamayJain10">Amazon Clone by Samay Jain</a></span>
+        </div>
+    </section>
+
+</body>
+</html>
